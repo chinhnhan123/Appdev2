@@ -1,0 +1,28 @@
+<div class="card-body">
+    <h4 class="card-title">Default form</h4>
+    <form class="forms-sample" action="/staff/updatecoursecategory" method="post">
+      <div class="form-group"  style =" display: none;">
+        <label for="exampleInputUsername1">ID</label>
+        <input type="number" class="form-control" id="exampleInputUsername1"  name="id" value="<%= coursecategory.id %>"
+        readonly
+        >
+      </div>
+      <div class="form-group">
+        <label for="exampleInputUsername1">Name</label>
+        <input type="text" class="form-control" id="exampleInputUsername1" placeholder="Name" 
+        name="name"
+        value="<%= coursecategory.name %>" 
+        >
+      </div>
+  
+      <div class="form-group">
+        <label for="exampleInputUsername1">Description</label>
+        <input type="text" class="form-control" id="exampleInputUsername1" placeholder="Description"
+         name="description"
+         value="<%= coursecategory.description %>" 
+
+         >
+      </div>
+      <button type="submit" class="btn btn-primary mr-2">Submit</button>
+    </form>
+  </div>

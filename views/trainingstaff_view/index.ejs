@@ -1,0 +1,158 @@
+
+  <div >
+    <div class="container-fluid">
+      <table class="table" id="table_1">
+      
+        <a href="/staff/createtrainee" class="btn btn-success" > Create Trainee  </a>
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">User Name</th>
+              <th scope="col">Pass word</th>
+              <th scope="col">Role</th>
+              <th scope="col">View detail</th>
+              <th scope="col">Change Password</th>
+              <th scope="col">Delete</th>
+              
+            </tr>
+          </thead>
+          <tbody>
+              <% traineeAccounts.forEach(a=> { %>
+                  <tr>
+                    <td scope="row"><%= a.id%></td>
+                    <td><%= a.username%></td>
+                    <td><%= a.password%></td>
+                    <td><%= a.role.name%></td>
+                    <td>
+                      <a href="/staff/viewtrainee/<%= a.userid%>" class="btn btn-primary" > View </a>
+                    </td>
+                    <td>
+                      <a  href="/staff/updatetrainee/<%= a.userid%>" class="btn btn-info" >Update</a>
+                    </td>
+                    <td>
+                      <a href="/staff/deletetrainee/<%= a.id%>/<%= a.userid%>" class="btn btn-danger" > Delete </a>
+                    </td>
+                  </tr>
+                  <% }) %>
+          </tbody>
+      </table>
+      <br>
+      <table class="table" id="table_2">
+      
+        <a href="/staff/createcoursecategory" class="btn btn-success" > Create sourse category  </a>
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col"> Name</th>
+              <th scope="col">Description</th>
+              <th scope="col">Update</th>
+              <th scope="col">Delete</th>
+              
+            </tr>
+          </thead>
+          <tbody>
+              <% soursecategory.forEach(a=> { %>
+                  <tr>
+                    <td scope="row"><%= a.id%></td>
+                    <td><%= a.name%></td>
+                    <td><%= a.description%></td>
+                    <td>
+                      <a  href="/staff/updatecoursecategory/<%= a.id%>" class="btn btn-info" >Update</a>
+                    </td>
+                    <td>
+                      <a href="/staff/deletecoursecategory/<%= a.id%>" class="btn btn-danger" > Delete </a>
+                    </td>
+                  </tr>
+                  <% }) %>
+          </tbody>
+      </table>
+      <br>
+      <table class="table" id="table_3">
+      
+        <a href="/staff/createcourse" class="btn btn-success" > Create sourse  </a>
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col"> Name</th>
+              <th scope="col">Description</th>
+              <th scope="col">Sourse category</th>             
+              <th scope="col">Update</th>
+              <th scope="col">Delete</th>
+              
+            </tr>
+          </thead>
+          <tbody>
+              <% sourses.forEach(a=> { %>
+                  <tr>
+                    <td scope="row"><%= a.id%></td>
+                    <td><%= a.name%></td>
+                    <td><%= a.description%></td>
+                    <td><%= a.course_catelory.name%></td>
+                    <td>
+                      <a  href="/staff/updatecourse/<%= a.id%>" class="btn btn-info" >Update</a>
+                    </td>
+                    <td>
+                      <a href="/staff/deletecourse/<%= a.id%>" class="btn btn-danger" > Delete </a>
+                    </td>
+                  </tr>
+                  <% }) %>
+          </tbody>
+      </table>
+
+      <table class="table" id="table_4">
+      
+        <a href="/staff/assigntrainer" class="btn btn-success" >Assign trainer   </a>
+          <thead>
+            <tr>
+              <th scope="col">Trainer</th>
+              <th scope="col">Course</th>             
+              <th scope="col">Update</th>
+              <th scope="col">Delete</th>
+              
+            </tr>
+          </thead>
+          <tbody>
+              <% assignedtrainers.forEach(a=> { %>
+                  <tr>
+                    <td><%= a.Trainer.fullname%></td>
+                    <td><%= a.course.name%></td>
+                    <td>
+                      <a  href="/staff/updatetrainercourse/<%= a.Trainer.id%>/<%= a.course.id%>" class="btn btn-info" >Update</a>
+                    </td>
+                    <td>
+                      <a href="/staff/deletetrainercourse/<%= a.Trainer.id%>/<%= a.course.id%>" class="btn btn-danger" > Delete </a>
+                    </td>
+                  </tr>
+                  <% }) %>
+          </tbody>
+      </table>
+      
+      <table class="table" id="table_5">
+      
+        <a href="/staff/assigntrainee" class="btn btn-success" >Assign trainee   </a>
+          <thead>
+            <tr>
+              <th scope="col">Trainee</th>
+              <th scope="col">Course</th>             
+              <th scope="col">Update</th>
+              <th scope="col">Delete</th>
+              
+            </tr>
+          </thead>
+          <tbody>
+              <% assignedtrainees.forEach(a=> { %>
+                  <tr>
+                    <td><%= a.trainee.name%></td>
+                    <td><%= a.course.name%></td>
+                    <td>
+                      <a  href="/staff/updatetraineecourse/<%= a.trainee.id%>/<%= a.course.id%>" class="btn btn-info" >Update</a>
+                    </td>
+                    <td>
+                      <a href="/staff/deletetraineecourse/<%= a.trainee.id%>/<%= a.course.id%>" class="btn btn-danger" > Delete </a>
+                    </td>
+                  </tr>
+                  <% }) %>
+          </tbody>
+      </table>
+    </div>
+  </div>

@@ -1,0 +1,72 @@
+<div class="container-fluid">
+  <table class="table">
+  
+    <a href="/admin/createtrainer" class="btn btn-success" > Create Trainer  </a>
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">User Name</th>
+          <th scope="col">Pass word</th>
+          <th scope="col">Role</th>
+          <th scope="col">View detail</th>
+          <th scope="col">Change Password</th>
+          <th scope="col">Delete</th>
+          
+        </tr>
+      </thead>
+      <tbody>
+          <% trainerAccounts.forEach(a=> { %>
+              <tr>
+                <th scope="row"><%= a.id%></th>
+                <td><%= a.username%></td>
+                <td><%= a.password%></td>
+                <td><%= a.role.name%></td>
+                <td>
+                  <a href="/admin/viewtrainer/<%= a.userid%>" class="btn btn-primary" > View </a>
+                </td>
+                <td>
+                  <a  href="/admin/changepassword/<%= a.id%>" class="btn btn-info" > Change Password </a>
+                </td>
+                <td>
+                  <a href="/admin/deletetrainer/<%= a.id%>/<%= a.userid%>" class="btn btn-danger" > Delete </a>
+                </td>
+              </tr>
+              <% }) %>
+      </tbody>
+    </table>
+
+  <table class="table">
+  
+    <a href="/admin/createstaff" class="btn btn-success" > Create staff  </a>
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">User Name</th>
+          <th scope="col">Pass word</th>
+          <th scope="col">Role</th>
+          <th scope="col">View detail</th>
+          <th scope="col">Change Password</th>
+          <th scope="col">Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+          <% staffAccounts.forEach(staffAccount=> { %>
+              <tr>
+                <th scope="row"><%= staffAccount.id%></th>
+                <td><%= staffAccount.username%></td>
+                <td><%= staffAccount.password%></td>
+                <td><%= staffAccount.role.name%></td>
+                <td>
+                  <a href="/admin/viewstaff/<%= staffAccount.userid%>" class="btn btn-primary" > View </a>
+                </td>
+                <td>
+                  <a  href="/admin/changepassword/<%= staffAccount.id%>" class="btn btn-info" > Change Password </a>
+                </td>
+                <td>
+                  <a href="/admin/deletestaff/<%= staffAccount.id%>/<%= staffAccount.userid%>" class="btn btn-danger" > Delete </a>
+                </td>
+              </tr>
+              <% }) %>
+      </tbody>
+    </table>
+</div>

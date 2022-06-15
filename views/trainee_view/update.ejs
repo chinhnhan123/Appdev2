@@ -1,0 +1,47 @@
+<div class="card-body">
+    <h4 class="card-title">Default form</h4>
+    <form class="forms-sample" action="/staff/updatetrainee" method="post">
+
+      <div class="form-group"  style =" display: none;">
+        <label for="exampleInputUsername1">ID</label>
+        <input type="number" class="form-control" id="exampleInputUsername1"  name="id" value="<%= trainee.id %>"
+        readonly
+        >
+      </div>
+      <div class="form-group">
+        <label for="exampleInputUsername1">Name</label>
+        <input type="text" class="form-control" id="exampleInputUsername1" placeholder="Name" 
+        value="<%= trainee.name %>"
+        name="name">
+      </div>
+  
+      <div class="form-group">
+        <label for="exampleInputUsername1">Age</label>
+        <input type="number" class="form-control" id="exampleInputUsername1" placeholder="Age" name="age"
+        value="<%= trainee.age %>"
+        >
+      </div>
+  
+      <div class="form-group">
+        <label for="exampleInputUsername1">Date of Birth</label>
+        <input type="text" class="form-control" id="exampleInputUsername1" placeholder="Date of Birth"
+        value="<%= trainee.dateofbirth %>"
+        name="dateofbirth">
+      </div>
+  
+      <div class="form-group">
+        <label for="exampleInputEmail1">Email</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email"
+        value="<%= trainee.email %>"
+        name="email">
+      </div>
+    
+      <div class="form-group">
+        <label for="exampleInputEmail1">Education</label>
+        <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Education" 
+        value="<%= trainee.education %>"
+        name="education">
+      </div>
+      <button type="submit" class="btn btn-primary mr-2">Submit</button>
+    </form>
+  </div>

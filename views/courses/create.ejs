@@ -1,0 +1,30 @@
+<div  class="card-body">
+    <h4 class="card-title">Default form</h4>
+    <form class="forms-sample" action="/staff/addcourse" method="post">
+      <div class="form-group">
+        <label for="exampleFormControlSelect1">Sourse category</label>
+        <select name = "coursecategoryid" style="color: #f7f5f5" class="form-control" id="exampleFormControlSelect1">
+          
+          <% soursecategory.forEach(a=> { %>
+            <option  value="<%= a.id%>"><%= a.name%></option>
+            <% }) %>
+        
+        </select>
+      </div>
+      <div style="color: #f7f5f5" class="form-group">
+        <label for="exampleInputUsername1">Name sourse</label>
+        <input type="text" class="form-control" id="exampleInputUsername1" placeholder="Name" name="name">
+      </div>
+  
+      <div style="color: #f7f5f5" class="form-group">
+        <label for="exampleInputUsername1">Description </label>
+        <input type="text" class="form-control" id="exampleInputUsername1" placeholder="Description" name="description">
+      </div>
+      <button type="submit" class="btn btn-primary mr-2">Submit</button>
+    </form>
+  </div>
+ 
+
+
+
+    

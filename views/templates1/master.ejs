@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+    <% include header   %>
+  <body>
+    <div class="container-scroller">
+        <% include sidebar   %>
+      <!-- partial -->
+      <div class="container-fluid page-body-wrapper">
+        <!-- partial:partials/_navbar.html -->
+        <% include navbar   %>
+        <!-- partial -->
+        <div class="main-panel">
+          <div class="content-wrapper">
+            <%- include(content)  %> 
+          </div>
+          <!-- content-wrapper ends -->
+          <!-- partial:partials/_footer.html -->
+          <% include footer   %>
+          <!-- partial -->
+        </div>
+        <!-- main-panel ends -->
+      </div>
+      <!-- page-body-wrapper ends -->
+    </div>
+    <!-- container-scroller -->
+    <!-- plugins:js -->
+    <script src="<%= process.env.BASE_URL %>assets/vendors/js/vendor.bundle.base.js"></script>
+    <!-- endinject -->
+    <!-- Plugin js for this page -->
+    <script src="<%= process.env.BASE_URL %>assets/vendors/chart.js/Chart.min.js"></script>
+    <script src="<%= process.env.BASE_URL %>assets/vendors/progressbar.js/progressbar.min.js"></script>
+    <script src="<%= process.env.BASE_URL %>assets/vendors/jvectormap/jquery-jvectormap.min.js"></script>
+    <script src="<%= process.env.BASE_URL %>assets/vendors/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+    <script src="<%= process.env.BASE_URL %>assets/vendors/owl-carousel-2/owl.carousel.min.js"></script>
+    <!-- End plugin js for this page -->
+    <!-- inject:js -->
+    <script src="<%= process.env.BASE_URL %>assets/js/off-canvas.js"></script>
+    <script src="<%= process.env.BASE_URL %>assets/js/hoverable-collapse.js"></script>
+    <script src="<%= process.env.BASE_URL %>assets/js/misc.js"></script>
+    <script src="<%= process.env.BASE_URL %>assets/js/settings.js"></script>
+    <script src="<%= process.env.BASE_URL %>assets/js/todolist.js"></script>
+    <!-- endinject -->
+    <!-- Custom js for this page -->
+    <script src="<%= process.env.BASE_URL %>assets/js/dashboard.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js"></script>
+
+    <script>
+      $(document).ready( function () {
+    $('#table_1').DataTable();
+    $('#table_2').DataTable();
+    $('#table_3').DataTable();
+    $('#table_4').DataTable();
+    $('#table_5').DataTable();
+
+    
+    } );
+    
+    var table1 = $('#table_1').DataTable(
+            {
+                "fnRowCallback": function (nRow, aData, iDisplayIndex, iDisplayIndexFull) {
+                        $('td', nRow).css('background-color', 'black');
+                }
+            }
+        );
+     var table2 = $('#table_2').DataTable(
+            {
+                "fnRowCallback": function (nRow, aData, iDisplayIndex, iDisplayIndexFull) {
+                        $('td', nRow).css('background-color', 'black');
+                }
+            }
+        );
+      var table3 = $('#table_3').DataTable(
+            {
+                "fnRowCallback": function (nRow, aData, iDisplayIndex, iDisplayIndexFull) {
+                        $('td', nRow).css('background-color', 'black');
+                }
+            }
+        );      
+        
+        var table_4 = $('#table_4').DataTable(
+            {
+                "fnRowCallback": function (nRow, aData, iDisplayIndex, iDisplayIndexFull) {
+                        $('td', nRow).css('background-color', 'black');
+                }
+            }
+        )
+
+        var table_4 = $('#table_5').DataTable(
+            {
+                "fnRowCallback": function (nRow, aData, iDisplayIndex, iDisplayIndexFull) {
+                        $('td', nRow).css('background-color', 'black');
+                }
+            }
+        )
+    </script>
+    <!-- End custom js for this page -->
+  </body>
+</html>
